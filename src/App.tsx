@@ -28,23 +28,19 @@ export default function App() {
                 <h2>{question.question}</h2>
 
                 <ul>
-                  <div>
-                    <li>
-                      <button onClick={() => setCorrectAnswer(!correctAnswer)}>
-                        {question.correctAnswer}
-                      </button>
-                    </li>
-                  </div>
+                  <li>
+                    <button onClick={() => setCorrectAnswer(!correctAnswer)}>
+                      {question.correctAnswer}
+                    </button>
+                  </li>
 
-                  <div>
-                    {question.incorrectAnswers.map((incorrect, key) => {
-                      return (
-                        <li key={key}>
-                          <button>{incorrect}</button>
-                        </li>
-                      );
-                    })}
-                  </div>
+                  {question.incorrectAnswers.map((incorrect, key) => {
+                    return (
+                      <li key={key}>
+                        <button>{incorrect}</button>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             );
